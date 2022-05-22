@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body style="text-align:center">
+{% block content %}
+<form method="POST" action="/update/{{ data.id }}">
+    {% csrf_token %}
+    <h1>Edit Your Details</h1>
+<table >
+
+    <tr><td><label>First Name</label>
+        <input type="text" name="FName" required maxlength="100"  value="{{ data.FName }}"/></td></tr>
+    <tr><td><label>Last Name</label>
+        <input type="text" name="LName" required maxlength="254"  value="{{ data.LName }}"/></td></tr>
+    <tr><td><label>Email</label>
+        <input type="email" name="Email" required maxlength="30"  value="{{ data.Email }}"/></td></tr>
+    <tr><td><label>Contact Number</label>
+        <input type="text" name="Ph_No" required maxlength="13"  value="{{ data.Ph_No }}"/></td></tr>
+    <tr><td><label>Registration Date</label>
+        <input type="date" name="EDate" required maxlength="15"  value="{{ data.EDate }}"/></td></tr>
+    <tr><td><button type="submit">Update</button></td></tr>
+</table>
+</form>
+{% endblock %}
+
+</body>
+</html>
